@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
 class NewsContainer extends StatelessWidget {
-  const NewsContainer({Key? key}) : super(key: key);
+  const NewsContainer(
+      {Key? key,
+      this.imageUrl,
+      this.title,
+      this.description,
+      this.author,
+      this.link})
+      : super(key: key);
+  final String? imageUrl;
+  final String? title;
+  final String? description;
+  final String? author;
+  final String? link;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +34,9 @@ class NewsContainer extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.3,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(11),
-                    image: const DecorationImage(
+                    image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: NetworkImage(
-                          "https://www.zambianguardian.com/wp-content/uploads/2022/02/Functions-of-political-system-according-to-David-Easton-696x457.jpg"),
+                      image: NetworkImage(imageUrl!),
                     ),
                   ),
                 ),
@@ -34,28 +45,28 @@ class NewsContainer extends StatelessWidget {
                 flex: 2,
                 child: Column(
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        "Gold smuggling fears after India hikes duty hjadhjdhkfhkhkfgjjkgjdhsgjmgsj",
+                        title!,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 17),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "Nepal’s foreign exchange reserves could deplete further if illegal imports rise. ",
+                        description!,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(),
+                        style: const TextStyle(),
                       ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [Text("By Bibek Acharya")],
+                      children: [Text("by $author")],
                     )
                   ],
                 ),

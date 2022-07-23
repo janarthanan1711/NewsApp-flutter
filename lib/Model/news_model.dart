@@ -5,5 +5,5 @@ class News {
   final String? author;
   final String? link;
 
-  News(this.title, this.imageUrl, this.description, this.author, this.link);
+  News({this.title, this.imageUrl, this.description, this.author, this.link});
 }

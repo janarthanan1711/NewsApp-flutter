@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white70,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 126, 231, 205),
+        backgroundColor: Colors.purpleAccent,
         title: const Text('News App'),
         leading: const Icon(Icons.arrow_back_sharp),
       ),
