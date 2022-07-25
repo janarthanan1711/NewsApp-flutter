@@ -3,7 +3,9 @@ import 'package:flutter_practice1/ApiHelper/news_api.dart';
 import 'package:flutter_practice1/widgets/news_container.dart';
 
 class NewsHome extends StatefulWidget {
-  NewsHome({Key? key}) : super(key: key);
+  final String? title;
+  final String? category;
+  const NewsHome({Key? key, this.title, this.category}) : super(key: key);
 
   @override
   State<NewsHome> createState() => _NewsHomeState();
@@ -16,10 +18,10 @@ class _NewsHomeState extends State<NewsHome> {
         appBar: AppBar(
           backgroundColor: Colors.purpleAccent,
           centerTitle: true,
-          title: const Text("Headlines"),
+          title: Text(widget.title!),
         ),
         body: FutureBuilder(
-          future: getNews('sports'),
+          future: getNews(widget.category!),
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.hasData) {
               return ListView.builder(

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice1/screens/news_home.dart';
 import 'package:flutter_practice1/widgets/news_container.dart';
@@ -12,7 +13,14 @@ class HomeContainer extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: ((context) => NewsHome())));
+          context,
+          MaterialPageRoute(
+            builder: ((context) => NewsHome(
+                  title: title,
+                  category: title!.toLowerCase(),
+                )),
+          ),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
