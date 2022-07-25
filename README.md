@@ -1,10 +1,10 @@
-# flutter_practice1
+# flutter_practice
 
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application and API integration
 
 A few resources to get you started if this is your first Flutter project:
 
