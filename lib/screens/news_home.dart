@@ -36,7 +36,11 @@ class _NewsHomeState extends State<NewsHome> {
                 }),
               );
             }
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+                child: CircularProgressIndicator(
+              color: Colors.white,
+              backgroundColor: Colors.purpleAccent,
+            ));
           },
         ));
   }
